@@ -23,7 +23,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${lexendDeca.className} antialiased`}>{children}</body>
+      <body
+        className={`${lexendDeca.className} bg-grey-60 text-white antialiased`}
+      >
+        {children}
+      </body>
     </html>
   );
 }
