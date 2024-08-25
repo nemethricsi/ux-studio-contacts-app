@@ -1,3 +1,9 @@
+import Text from '@/app/ui/text';
+
 export default function Home() {
-  return <h1 className="font-serif text-[32px]">UX Studio - Contacts</h1>;
+  return (
+    <>
+      <Text variant="h1">Contacts</Text>
+    </>
+  );
 }
