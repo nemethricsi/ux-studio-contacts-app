@@ -1,3 +1,16 @@
 {
-  "extends": ["next/core-web-vitals", "eslint:recommended", "plugin:react/recommended", "prettier"]
+  "extends": ["next/core-web-vitals", "eslint:recommended", "plugin:react/recommended", "prettier"],
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-uses-react": "off",
+    "react/jsx-uses-vars": "warn"
+  },
+  "globals": {
+    "React": "writable"
+  }
 }
