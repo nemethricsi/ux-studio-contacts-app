@@ -6,6 +6,7 @@ const ProfileMenuButton = (props: ButtonProps) => {
   return (
     <Button
       className="button-base secondary-button padding-icon-only-button"
+      title="Open profile menu"
       {...props}
     >
       <Image
