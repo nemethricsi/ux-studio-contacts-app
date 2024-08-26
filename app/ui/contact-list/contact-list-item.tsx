@@ -14,7 +14,7 @@ const ContactListItem = ({
   imageUrl,
 }: ContactListItemProps) => {
   return (
-    <div className="group flex items-center justify-between py-3">
+    <div className="group flex items-center justify-between gap-3 py-3">
       <div className="flex items-center gap-4">
         <div className="rounded-full bg-grey-70 p-[1px]">
           <Image

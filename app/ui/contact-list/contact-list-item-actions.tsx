@@ -1,10 +1,8 @@
-'use client';
-
 import Button from '@/app/ui/button';
 
 const ContactListItemActions = () => {
   return (
-    <div className="hidden items-center gap-2 group-hover:flex">
+    <div className="flex items-center gap-2 group-hover:flex md:hidden">
       <Button
         label="Mute"
         variant="secondary"

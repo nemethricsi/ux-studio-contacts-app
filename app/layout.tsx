@@ -22,9 +22,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="h-full">
       <body
-        className={`${lexendDeca.className} bg-grey-100 text-white antialiased`}
+        className={`${lexendDeca.className} flex h-full flex-col bg-grey-100 text-white antialiased`}
       >
         {children}
       </body>
