@@ -9,6 +9,8 @@ const HeaderActions = () => {
     <div className="flex items-center gap-6">
       <div className="flex items-center gap-2">
         <Button
+          label="Settings"
+          iconOnly
           variant="secondary"
           iconId="settings"
           title="Open settings"

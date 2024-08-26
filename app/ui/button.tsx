@@ -8,26 +8,29 @@ import * as React from 'react';
 type ButtonVariant = 'primary' | 'secondary';
 
 interface BaseButtonProps extends ButtonPrimitiveProps {
-  label?: string;
   variant: ButtonVariant;
-  children?: React.ReactNode;
+  label: string;
   iconId?: IconType;
+  iconOnly?: boolean;
 }
 
 type ButtonProps = BaseButtonProps &
   React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ label, className, variant, iconId, ...props }, ref) => {
+  (
+    { label, className = '', variant, iconId, iconOnly = false, ...props },
+    ref,
+  ) => {
     const variantClasses = clsx({
       'primary-button': variant === 'primary',
       'secondary-button': variant === 'secondary',
     });
 
     const typeClasses = clsx({
-      'flex items-center gap-2 py-2 pl-3 pr-4': iconId && label,
-      'padding-icon-only-button': iconId && !label,
-      'px-4 py-2': !iconId && label,
+      'flex items-center gap-2 py-2 pl-3 pr-4': iconId && !iconOnly,
+      'padding-icon-only-button': iconId && iconOnly,
+      'px-4 py-2': !iconId,
     });
 
     const combinedClasses = clsx(
@@ -40,7 +43,13 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <ButtonPrimitive className={combinedClasses} ref={ref} {...props}>
         {iconId && <Icon iconId={iconId} className="h-6 w-6" />}
-        <span className="text-sm leading-none text-white">{label}</span>
+        <span
+          className={clsx('text-sm leading-none text-white', {
+            'sr-only': iconOnly,
+          })}
+        >
+          {label}
+        </span>
       </ButtonPrimitive>
     );
   },
