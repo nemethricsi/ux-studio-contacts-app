@@ -8,8 +8,12 @@ const HeaderActions = () => {
   return (
     <div className="flex items-center gap-6">
       <div className="flex items-center gap-2">
-        <Button variant="secondary" iconId="settings" />
-        <ProfileMenuButton />
+        <Button
+          variant="secondary"
+          iconId="settings"
+          onClick={() => alert('Open Settings Menu')}
+        />
+        <ProfileMenuButton onClick={() => alert('Open Profile Menu')} />
       </div>
       <SpecialButton
         label="Add new"
