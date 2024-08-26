@@ -11,7 +11,6 @@ const ContactListItemActions = () => {
         iconId="mute"
         title="Mute contact"
         iconOnly
-        onClick={() => alert('Mute contact')}
       />
       <Button
         label="Call"
@@ -19,7 +18,6 @@ const ContactListItemActions = () => {
         iconId="call"
         title="Call contact"
         iconOnly
-        onClick={() => alert('Call contact')}
       />
       <Button
         label="More"

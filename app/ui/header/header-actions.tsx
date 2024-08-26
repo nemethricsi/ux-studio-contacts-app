@@ -1,8 +1,8 @@
 'use client';
 
 import Button from '@/app/ui/button';
-import ProfileMenuButton from '@/app/ui/profile-menu-button';
-import SpecialButton from '@/app/ui/special-button';
+import ProfileMenuButton from '@/app/ui/header/profile-menu-button';
+import SpecialButton from '@/app/ui/header/special-button';
 
 const HeaderActions = () => {
   return (
@@ -14,9 +14,8 @@ const HeaderActions = () => {
           variant="secondary"
           iconId="settings"
           title="Open settings"
-          onClick={() => alert('Open Settings Menu')}
         />
-        <ProfileMenuButton onClick={() => alert('Open Profile Menu')} />
+        <ProfileMenuButton />
       </div>
       <SpecialButton
         label="Add new"
