@@ -1,10 +1,14 @@
 import { AddIcon } from '@/app/lib/icons';
 import Text from '@/app/ui/text';
-import { Button } from '@headlessui/react';
+import { Button, ButtonProps } from '@headlessui/react';
 
-const SpecialButton = ({ label }: { label: string }) => {
+interface SpecialButtonProps extends ButtonProps {
+  label: string;
+}
+
+const SpecialButton = ({ label, ...props }: SpecialButtonProps) => {
   return (
-    <Button className="rounded-full bg-grey-100 outline-offset-4">
+    <Button className="interactive rounded-full bg-grey-100" {...props}>
       <div className="rounded-full bg-gradient-to-b from-grey-20 to-transparent p-[1px]">
         <div className="rounded-full bg-gradient-to-b from-grey-60/[.7] to-grey-60">
           <div className="flex items-center gap-2 rounded-full py-2 pl-3 pr-4 hover:bg-white/[.04] active:bg-white/[.04]">

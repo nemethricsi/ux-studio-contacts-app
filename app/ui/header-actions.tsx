@@ -9,9 +9,10 @@ const HeaderActions = () => {
         <button>settings</button>
         <button>user menu</button>
       </div>
-      <SpecialButton onClick={() => alert('Add new contact here!')}>
-        Add new
-      </SpecialButton>
+      <SpecialButton
+        label="Add new"
+        onClick={() => alert('Add new contact here!')}
+      />
     </div>
   );
 };
