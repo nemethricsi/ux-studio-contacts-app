@@ -11,12 +11,14 @@ const HeaderActions = () => {
         <Button
           variant="secondary"
           iconId="settings"
+          title="Open settings"
           onClick={() => alert('Open Settings Menu')}
         />
         <ProfileMenuButton onClick={() => alert('Open Profile Menu')} />
       </div>
       <SpecialButton
         label="Add new"
+        title="Add new contact"
         onClick={() => alert('Add new contact here!')}
       />
     </div>
