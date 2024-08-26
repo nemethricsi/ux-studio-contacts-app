@@ -10,7 +10,7 @@ interface SpecialButtonProps extends ButtonProps {
 const SpecialButton = ({ label, title, ...props }: SpecialButtonProps) => {
   return (
     <Button
-      className="interactive rounded-full bg-grey-100"
+      className="interactive flex-shrink-0 rounded-full bg-grey-100"
       title={title}
       {...props}
     >

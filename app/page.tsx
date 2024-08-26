@@ -4,7 +4,7 @@ import Text from '@/app/ui/text';
 
 export default function Home() {
   return (
-    <>
+    <div className="min-h-full select-none">
       <header className="mx-auto flex max-w-[768px] items-center justify-between border border-grey-60 p-6">
         <Text variant="h1">Contacts</Text>
         <HeaderActions />

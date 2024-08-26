@@ -5,7 +5,7 @@ import Image from 'next/image';
 const ProfileMenuButton = (props: ButtonProps) => {
   return (
     <Button
-      className="button-base secondary-button padding-icon-only-button"
+      className="button-base secondary-button padding-icon-only-button flex-shrink-0"
       title="Open profile menu"
       {...props}
     >
