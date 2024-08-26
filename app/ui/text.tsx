@@ -9,11 +9,11 @@ interface TextProps {
 }
 
 const styles: Record<TextVariant, string> = {
-  h1: 'font-serif text-[32px] leading-[48px] tracking-[0%]',
-  h2: 'font-serif text-[24px] leading-[40px] tracking-[0%]',
-  h3: 'text-[16px] leading-[24px] font-normal tracking-[1%]',
-  body: 'text-[14px] leading-[20px] font-normal tracking-[1%]',
-  message: 'text-[12px] leading-[12px] font-normal tracking-[1%]',
+  h1: 'font-serif text-[32px] leading-[48px] tracking-normal',
+  h2: 'font-serif text-2xl leading-10 tracking-normal',
+  h3: 'text-base font-normal tracking-[0.01em]',
+  body: 'text-sm font-normal tracking-[0.01em]',
+  message: 'text-xs leading-3 font-normal tracking-[0.01em]',
 };
 
 const variantToComponent: Record<TextVariant, keyof JSX.IntrinsicElements> = {
