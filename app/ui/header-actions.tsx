@@ -1,6 +1,7 @@
 'use client';
 
 import Button from '@/app/ui/button';
+import ProfileMenuButton from '@/app/ui/profile-menu-button';
 import SpecialButton from '@/app/ui/special-button';
 
 const HeaderActions = () => {
@@ -8,7 +9,7 @@ const HeaderActions = () => {
     <div className="flex items-center gap-6">
       <div className="flex items-center gap-2">
         <Button variant="secondary" iconId="settings" />
-        <button>user menu</button>
+        <ProfileMenuButton />
       </div>
       <SpecialButton
         label="Add new"
