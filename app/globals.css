@@ -9,4 +9,8 @@
   .text-disabled {
     @apply text-opacity-32 text-white;
   }
+
+  .interactive {
+    @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500
+  }
 }
