@@ -13,4 +13,22 @@
   .interactive {
     @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500
   }
+
+  .padding-icon-only-button {
+    @apply p-2
+  }
+}
+
+@layer components {
+  .button-base {
+    @apply interactive h-10 rounded-lg transition duration-150
+  }
+  
+  .primary-button {
+    @apply bg-grey-60 hover:bg-grey-50 active:bg-grey-40
+  }
+
+  .secondary-button {
+    @apply bg-transparent hover:bg-grey-90 active:bg-grey-80
+  }
 }
