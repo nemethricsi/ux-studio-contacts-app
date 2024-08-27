@@ -1,5 +1,6 @@
 'use client';
 
+import { useContacts } from '@/app/hooks/useContacts';
 import type { IconType } from '@/app/ui/icon';
 import Icon from '@/app/ui/icon';
 import Text from '@/app/ui/text';
@@ -13,28 +14,34 @@ interface DropdownMenuItem {
   onClick: () => void;
 }
 
-const menuItems: DropdownMenuItem[] = [
-  {
-    id: 1,
-    label: 'Edit',
-    onClick: () => alert('TODO: Edit'),
-    iconId: 'settings',
-  },
-  {
-    id: 2,
-    label: 'Favourite',
-    onClick: () => undefined,
-    iconId: 'favourite',
-  },
-  {
-    id: 3,
-    label: 'Remove',
-    onClick: () => alert('TODO: Remove'),
-    iconId: 'delete',
-  },
-];
+const DropdownMenu = ({ contactId }: { contactId: string }) => {
+  const { deleteContactMutation } = useContacts();
 
-const DropdownMenu = () => {
+  const handleDelete = () => {
+    deleteContactMutation.mutate(contactId);
+  };
+
+  const menuItems: DropdownMenuItem[] = [
+    {
+      id: 1,
+      label: 'Edit',
+      onClick: () => alert('TODO: Edit'),
+      iconId: 'settings',
+    },
+    {
+      id: 2,
+      label: 'Favourite',
+      onClick: () => undefined,
+      iconId: 'favourite',
+    },
+    {
+      id: 3,
+      label: 'Remove',
+      onClick: handleDelete,
+      iconId: 'delete',
+    },
+  ];
+
   return (
     <Menu>
       <MenuButton className="button-base secondary-button padding-icon-only-button interactive data-[open]:bg-grey-80">

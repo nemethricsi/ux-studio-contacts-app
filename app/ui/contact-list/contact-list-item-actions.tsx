@@ -1,7 +1,7 @@
 import Button from '@/app/ui/button';
 import DropdownMenu from '@/app/ui/dropdown-menu';
 
-const ContactListItemActions = () => {
+const ContactListItemActions = ({ contactId }: { contactId: string }) => {
   return (
     <div className="flex items-center gap-2">
       <Button
@@ -18,7 +18,7 @@ const ContactListItemActions = () => {
         title="Call contact"
         iconOnly
       />
-      <DropdownMenu />
+      <DropdownMenu contactId={contactId} />
     </div>
   );
 };

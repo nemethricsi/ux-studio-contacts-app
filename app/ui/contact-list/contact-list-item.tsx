@@ -38,7 +38,7 @@ const ContactListItem = ({
           )}
         </div>
       </div>
-      {hoveredRow === id && <ContactListItemActions />}
+      {hoveredRow === id && <ContactListItemActions contactId={id} />}
     </div>
   );
 };
