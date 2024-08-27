@@ -1,9 +1,13 @@
+'use client';
+
 import ContactListItemActions from '@/app/ui/contact-list/contact-list-item-actions';
 import Text from '@/app/ui/text';
 import Image from 'next/image';
+import { useState } from 'react';
 
 interface ContactListItemProps {
   name: string;
+  contactId: number;
   phoneNumber?: string;
   imageUrl?: string;
 }
@@ -12,9 +16,16 @@ const ContactListItem = ({
   name,
   phoneNumber,
   imageUrl,
+  contactId,
 }: ContactListItemProps) => {
+  const [hoveredRow, setHoveredRow] = useState<number | null>(null);
+
   return (
-    <div className="group flex items-center justify-between gap-3 py-3">
+    <div
+      className="flex items-center justify-between gap-3 py-3"
+      onMouseEnter={() => setHoveredRow(contactId)}
+      onMouseLeave={() => setHoveredRow(null)}
+    >
       <div className="flex items-center gap-4">
         <div className="rounded-full bg-grey-70 p-px">
           <Image
@@ -34,7 +45,7 @@ const ContactListItem = ({
           )}
         </div>
       </div>
-      <ContactListItemActions />
+      {hoveredRow === contactId && <ContactListItemActions />}
     </div>
   );
 };
