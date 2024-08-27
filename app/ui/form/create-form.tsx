@@ -1,5 +1,6 @@
 'use client';
 
+import { useContacts } from '@/app/hooks/useContacts';
 import { useInputField } from '@/app/hooks/useInputfield';
 import Button from '@/app/ui/button';
 import ImageUploadField from '@/app/ui/form/image-upload-field';
@@ -9,6 +10,7 @@ import { Fieldset } from '@headlessui/react';
 import { useState } from 'react';
 
 const CreateForm = () => {
+  const { createContactMutation } = useContacts();
   const [selectedImage, setSelectedImage] = useState<File | null>(null);
   const [name, setName] = useInputField('');
   const [phoneNumber, setPhoneNumber] = useInputField('');
@@ -19,7 +21,6 @@ const CreateForm = () => {
   };
 
   const requestBody = {
-    selectedImage,
     name,
     phoneNumber,
     email,
@@ -27,7 +28,7 @@ const CreateForm = () => {
 
   const handleSubmit: React.MouseEventHandler<HTMLButtonElement> = (event) => {
     event.preventDefault();
-    alert(JSON.stringify(requestBody));
+    createContactMutation.mutate(requestBody);
   };
 
   return (
