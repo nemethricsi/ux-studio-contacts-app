@@ -42,9 +42,9 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     return (
       <ButtonPrimitive className={combinedClasses} ref={ref} {...props}>
-        {iconId && <Icon iconId={iconId} className="h-6 w-6" />}
+        {iconId && <Icon iconId={iconId} className="h-6 w-6 flex-shrink-0" />}
         <span
-          className={clsx('text-sm leading-none text-white', {
+          className={clsx('flex-shrink-0 text-sm leading-none text-white', {
             'sr-only': iconOnly,
           })}
         >
