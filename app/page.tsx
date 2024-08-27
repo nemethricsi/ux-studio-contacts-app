@@ -16,12 +16,6 @@ export default function Home() {
             phoneNumber="+36 01 234 5678"
           />
           <ContactListItem contactId={2} name="Timothy Lewis" />
-          <ContactListItem
-            contactId={3}
-            name="Adebayo Rodriguez"
-            phoneNumber="+36 01 234 5678"
-            imageUrl="/images/Adebayo.png"
-          />
         </div>
         <div className="hidden flex-grow md:flex" />
       </main>
