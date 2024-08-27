@@ -2,7 +2,11 @@ import type { InputProps } from '@headlessui/react';
 import { Field, Input, Label } from '@headlessui/react';
 import { useId } from 'react';
 
-const InputField = (props: InputProps) => {
+interface InputFieldProps extends InputProps {
+  label: string;
+}
+
+const InputField = ({ label, ...props }: InputFieldProps) => {
   const id = useId();
 
   return (
@@ -11,7 +15,7 @@ const InputField = (props: InputProps) => {
         htmlFor={id}
         className="text-secondary text-xs font-normal leading-3 tracking-[0.01em]"
       >
-        Label
+        {label}
       </Label>
       <Input
         id={id}
