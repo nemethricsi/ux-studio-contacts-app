@@ -1,8 +1,9 @@
 import Button from '@/app/ui/button';
+import DropdownMenu from '@/app/ui/dropdown-menu';
 
 const ContactListItemActions = () => {
   return (
-    <div className="flex items-center gap-2 group-hover:flex md:hidden">
+    <div className="flex items-center gap-2">
       <Button
         label="Mute"
         variant="secondary"
@@ -17,13 +18,7 @@ const ContactListItemActions = () => {
         title="Call contact"
         iconOnly
       />
-      <Button
-        label="More"
-        variant="secondary"
-        iconId="more"
-        iconOnly
-        title="More actions"
-      />
+      <DropdownMenu />
     </div>
   );
 };
