@@ -2,28 +2,21 @@
 
 import ContactListItemActions from '@/app/ui/contact-list/contact-list-item-actions';
 import Text from '@/app/ui/text';
+import type { Contact } from '@prisma/client';
 import Image from 'next/image';
 import { useState } from 'react';
 
-interface ContactListItemProps {
-  name: string;
-  contactId: number;
-  phoneNumber?: string;
-  imageUrl?: string;
-}
-
 const ContactListItem = ({
-  name,
-  phoneNumber,
-  imageUrl,
-  contactId,
-}: ContactListItemProps) => {
-  const [hoveredRow, setHoveredRow] = useState<number | null>(null);
+  contact: { id, name, imageUrl, phoneNumber },
+}: {
+  contact: Contact;
+}) => {
+  const [hoveredRow, setHoveredRow] = useState<string | null>(null);
 
   return (
     <div
       className="flex items-center justify-between gap-3 py-3"
-      onMouseEnter={() => setHoveredRow(contactId)}
+      onMouseEnter={() => setHoveredRow(id)}
       onMouseLeave={() => setHoveredRow(null)}
     >
       <div className="flex items-center gap-4">
@@ -40,12 +33,12 @@ const ContactListItem = ({
           <Text variant="h3">{name}</Text>
           {phoneNumber && (
             <Text variant="message" className="text-secondary">
-              +36 01 234 5678
+              {phoneNumber}
             </Text>
           )}
         </div>
       </div>
-      {hoveredRow === contactId && <ContactListItemActions />}
+      {hoveredRow === id && <ContactListItemActions />}
     </div>
   );
 };

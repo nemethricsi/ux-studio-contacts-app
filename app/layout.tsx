@@ -1,3 +1,4 @@
+import Providers from '@/app/lib/providers';
 import type { Metadata } from 'next';
 import { Lexend_Deca } from 'next/font/google';
 import localFont from 'next/font/local';
@@ -26,7 +27,7 @@ export default function RootLayout({
       <body
         className={`${lexendDeca.className} flex h-full flex-col bg-grey-100 text-white antialiased`}
       >
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

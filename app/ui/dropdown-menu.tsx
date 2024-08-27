@@ -7,6 +7,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
 import { motion } from 'framer-motion';
 
 interface DropdownMenuItem {
+  id: number;
   label: string;
   iconId: IconType;
   onClick: () => void;
@@ -14,16 +15,19 @@ interface DropdownMenuItem {
 
 const menuItems: DropdownMenuItem[] = [
   {
+    id: 1,
     label: 'Edit',
     onClick: () => alert('TODO: Edit'),
     iconId: 'settings',
   },
   {
+    id: 2,
     label: 'Favourite',
     onClick: () => undefined,
     iconId: 'favourite',
   },
   {
+    id: 3,
     label: 'Remove',
     onClick: () => alert('TODO: Remove'),
     iconId: 'delete',
@@ -44,8 +48,8 @@ const DropdownMenu = () => {
         anchor="bottom start"
         className="flex w-[219px] origin-top-right flex-col items-start rounded-lg bg-grey-80 [--anchor-gap:8px] focus:outline-none"
       >
-        {menuItems.map(({ label, onClick, iconId }) => (
-          <MenuItem>
+        {menuItems.map(({ id, label, onClick, iconId }) => (
+          <MenuItem key={id}>
             <button
               onClick={onClick}
               className="flex w-full items-center gap-3 bg-transparent px-[10px] py-3 hover:bg-grey-70 active:bg-grey-60 data-[active]:bg-grey-60 data-[focus]:bg-grey-70"
