@@ -11,13 +11,10 @@ const fetchContacts = async (): Promise<Contact[]> => {
   return await response.json()
 }
 
-const createContact = async (contactData: Omit<Contact, 'id' | 'createdAt' | 'updatedAt' | 'imageUrl'>) => {
+const createContact = async (formData: FormData) => {
   const response = await fetch('/api/contacts/create', {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(contactData),
+    body: formData,
   })
 
   if (!response.ok) {

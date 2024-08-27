@@ -21,6 +21,7 @@ const CreateForm = () => {
   };
 
   const requestBody = {
+    file: selectedImage,
     name,
     phoneNumber,
     email,
@@ -28,7 +29,16 @@ const CreateForm = () => {
 
   const handleSubmit: React.MouseEventHandler<HTMLButtonElement> = (event) => {
     event.preventDefault();
-    createContactMutation.mutate(requestBody);
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('phoneNumber', phoneNumber);
+    formData.append('email', email);
+
+    if (selectedImage) {
+      formData.append('image', selectedImage);
+    }
+
+    createContactMutation.mutate(formData);
   };
 
   return (
