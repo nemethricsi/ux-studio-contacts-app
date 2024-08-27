@@ -7,7 +7,7 @@ export default function Home() {
     <>
       <MobileHeader />
       <MainHeader />
-      <main className="flex flex-grow">
+      <main className="flex flex-grow select-none">
         <div className="hidden flex-grow md:flex" />
         <div className="basis-[768px] border-x border-grey-60 px-6 py-3">
           <ContactList />

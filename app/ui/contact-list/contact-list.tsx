@@ -22,7 +22,7 @@ const ContactList = () => {
             height={200}
           />
           <Text variant="h3" className="text-secondary text-center">
-            No contacts yet. Add a new contact to get started!
+            No contacts yet. Click "Add new" above to get started!
           </Text>
         </div>
       )}
