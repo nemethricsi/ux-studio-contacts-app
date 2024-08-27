@@ -16,7 +16,7 @@ const ContactListItem = ({
   return (
     <div className="group flex items-center justify-between gap-3 py-3">
       <div className="flex items-center gap-4">
-        <div className="rounded-full bg-grey-70 p-[1px]">
+        <div className="rounded-full bg-grey-70 p-px">
           <Image
             src={imageUrl ? imageUrl : '/images/default.png'}
             alt="default avatar"

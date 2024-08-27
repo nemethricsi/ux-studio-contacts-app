@@ -14,7 +14,7 @@ const SpecialButton = ({ label, title, ...props }: SpecialButtonProps) => {
       title={title}
       {...props}
     >
-      <div className="rounded-full bg-gradient-to-b from-grey-20 to-transparent p-[1px]">
+      <div className="rounded-full bg-gradient-to-b from-grey-20 to-transparent p-px">
         <div className="rounded-full bg-gradient-to-b from-grey-60/[.7] to-grey-60">
           <div className="flex items-center gap-2 rounded-full py-2 pl-3 pr-4 hover:bg-white/[.04] active:bg-white/[.04]">
             <AddIcon className="h-6 w-6" />
