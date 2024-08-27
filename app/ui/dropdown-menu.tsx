@@ -4,6 +4,7 @@ import type { IconType } from '@/app/ui/icon';
 import Icon from '@/app/ui/icon';
 import Text from '@/app/ui/text';
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
+import { motion } from 'framer-motion';
 
 interface DropdownMenuItem {
   label: string;
@@ -32,11 +33,14 @@ const menuItems: DropdownMenuItem[] = [
 const DropdownMenu = () => {
   return (
     <Menu>
-      <MenuButton className="button-base secondary-button padding-icon-only-button interactive">
+      <MenuButton className="button-base secondary-button padding-icon-only-button interactive data-[open]:bg-grey-80">
         <Icon iconId="more" className="h-6 w-6 text-white" />
       </MenuButton>
       <MenuItems
-        transition
+        as={motion.div}
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.95 }}
         anchor="bottom start"
         className="flex w-[219px] origin-top-right flex-col items-start rounded-lg bg-grey-80 [--anchor-gap:8px] focus:outline-none"
       >
