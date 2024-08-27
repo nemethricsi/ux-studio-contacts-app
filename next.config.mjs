@@ -27,6 +27,10 @@ const nextConfig = {
 
     return config;
   },
+  reactStrictMode: true,
+  images: {
+    domains: ['ux-studio-bucket.s3.eu-north-1.amazonaws.com'],
+  },
 };
 
 export default nextConfig;
