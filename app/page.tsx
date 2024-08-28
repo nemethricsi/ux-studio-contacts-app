@@ -20,6 +20,11 @@ export default function Home() {
 
   return (
     <>
+      <div className="hidden h-24 border-b border-grey-60 md:flex">
+        <div className="flex-grow" />
+        <div className="basis-[768px] border-x border-grey-60" />
+        <div className="flex-grow" />
+      </div>
       <MobileHeader />
       <MainHeader openCreateModal={openCreateModal} />
       <main className="flex flex-grow select-none">

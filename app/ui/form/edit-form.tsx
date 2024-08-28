@@ -53,7 +53,7 @@ const EditForm = ({ contact }: { contact: Contact }) => {
   return (
     <Fieldset className="w-[364px] p-6">
       <form className="flex flex-col gap-6 bg-grey-100">
-        <Text variant="h2">Add Contact</Text>
+        <Text variant="h2">Edit Contact</Text>
         <ImageUploadField
           handleChangeImage={handleChangeImage}
           existingImageUrl={contact.imageUrl || ''}

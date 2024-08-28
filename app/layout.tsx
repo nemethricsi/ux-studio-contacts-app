@@ -13,7 +13,7 @@ const lexendDeca = Lexend_Deca({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Contacts Made Easy • UX Studio',
-  description: "Proof that I'm not just a pretty interface. Hire me, and let's create more amazing stuff together!",
+  description: "Proof that I'm not just a pretty interface. Hope we're going to create more amazing stuff together!",
 };
 
 export default function RootLayout({

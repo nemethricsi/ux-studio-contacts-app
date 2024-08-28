@@ -34,7 +34,7 @@ const Modal = ({
             exit="exit"
             className="fixed inset-0 bg-black/40"
           />
-          <div className="fixed left-0 right-0 top-16 flex w-screen items-center justify-center p-4">
+          <div className="fixed left-0 right-0 top-[164px] flex w-screen items-center justify-center p-4">
             <DialogPanel
               as={motion.div}
               variants={panelVariants}
