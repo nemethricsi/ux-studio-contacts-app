@@ -53,7 +53,7 @@ const CreateForm = () => {
           onChange={setPhoneNumber}
         />
         <InputField
-          label="Email Address"
+          label="Email address"
           id="emailAddress"
           placeholder="jamie.wright@mail.com"
           type="email"

@@ -68,7 +68,7 @@ const EditForm = ({ contact }: { contact: Contact }) => {
           onChange={setPhoneNumber}
         />
         <InputField
-          label="Email Address"
+          label="Email address"
           id="emailAddress"
           type="email"
           placeholder="jamie.wright@mail.com"
