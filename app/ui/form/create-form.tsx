@@ -6,10 +6,11 @@ import Button from '@/app/ui/button';
 import ImageUploadField from '@/app/ui/form/image-upload-field';
 import InputField from '@/app/ui/input-field';
 import Text from '@/app/ui/text';
-import { Fieldset } from '@headlessui/react';
+import { Fieldset, useClose } from '@headlessui/react';
 import { useState } from 'react';
 
 const CreateForm = () => {
+  const close = useClose();
   const { createContactMutation } = useContacts();
   const [selectedImage, setSelectedImage] = useState<File | null>(null);
   const [name, setName] = useInputField('');
@@ -20,29 +21,27 @@ const CreateForm = () => {
     setSelectedImage(file);
   };
 
-  const requestBody = {
-    file: selectedImage,
-    name,
-    phoneNumber,
-    email,
-  };
-
   const handleSubmit: React.MouseEventHandler<HTMLButtonElement> = (event) => {
     event.preventDefault();
-    const formData = new FormData();
-    formData.append('name', name);
-    formData.append('phoneNumber', phoneNumber);
-    formData.append('email', email);
+    try {
+      const formData = new FormData();
+      formData.append('name', name);
+      formData.append('phoneNumber', phoneNumber);
+      formData.append('email', email);
 
-    if (selectedImage) {
-      formData.append('image', selectedImage);
+      if (selectedImage) {
+        formData.append('image', selectedImage);
+      }
+
+      createContactMutation.mutate(formData);
+      close();
+    } catch (error) {
+      console.log(error);
     }
-
-    createContactMutation.mutate(formData);
   };
 
   return (
-    <Fieldset className="w-[364px] border border-white p-6">
+    <Fieldset className="w-[364px] p-6">
       <form className="flex flex-col gap-6 bg-grey-100">
         <Text variant="h2">Add Contact</Text>
         <ImageUploadField handleChangeImage={handleChangeImage} />
@@ -68,7 +67,7 @@ const CreateForm = () => {
         />
       </form>
       <div className="flex items-center justify-end gap-2 pt-12">
-        <Button variant="secondary" label="Cancel" />
+        <Button variant="secondary" label="Cancel" onClick={close} />
         <Button variant="primary" label="Done" onClick={handleSubmit} />
       </div>
     </Fieldset>

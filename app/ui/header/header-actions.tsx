@@ -4,7 +4,11 @@ import Button from '@/app/ui/button';
 import ProfileMenuButton from '@/app/ui/header/profile-menu-button';
 import SpecialButton from '@/app/ui/header/special-button';
 
-const HeaderActions = () => {
+const HeaderActions = ({
+  openCreateModal,
+}: {
+  openCreateModal: () => void;
+}) => {
   return (
     <div className="flex items-center gap-6">
       <div className="flex items-center gap-2">
@@ -21,7 +25,7 @@ const HeaderActions = () => {
         label="Add new"
         title="Add new contact"
         iconId="add"
-        onClick={() => alert('Add new contact here!')}
+        onClick={openCreateModal}
       />
     </div>
   );

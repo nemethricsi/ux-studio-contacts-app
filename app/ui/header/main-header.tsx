@@ -3,7 +3,7 @@ import BackButton from '@/app/ui/header/back-button';
 import HeaderActions from '@/app/ui/header/header-actions';
 import Text from '@/app/ui/text';
 
-const MainHeader = () => {
+const MainHeader = ({ openCreateModal }: { openCreateModal: () => void }) => {
   return (
     <header className="flex">
       <div className="hidden flex-grow items-center justify-end border-b border-grey-60 px-6 py-7 md:flex">
@@ -12,7 +12,7 @@ const MainHeader = () => {
       <div className="basis-[768px] border border-grey-60">
         <div className="flex flex-wrap items-center justify-center gap-4 p-6 md:justify-between">
           <Text variant="h1">Contacts</Text>
-          <HeaderActions />
+          <HeaderActions openCreateModal={openCreateModal} />
         </div>
       </div>
       <div className="hidden flex-grow items-center justify-start border-b border-grey-60 px-6 py-7 md:flex">
