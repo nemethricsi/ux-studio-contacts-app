@@ -12,7 +12,7 @@ const fetchContacts = async (): Promise<Contact[]> => {
 }
 
 const createContact = async (formData: FormData) => {
-  const response = await fetch('/api/contacts/create', {
+  const response = await fetch('/api/contacts', {
     method: 'POST',
     body: formData,
   })
@@ -23,12 +23,11 @@ const createContact = async (formData: FormData) => {
 } 
 
 const deleteContact = async (id: string): Promise<void> => {
-  const response = await fetch('/api/contacts', {
+  const response = await fetch(`/api/contacts/${id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ id }),
   })
 
   if (!response.ok) {

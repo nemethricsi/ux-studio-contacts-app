@@ -1,5 +1,11 @@
+import s3Client from '@/app/lib/aws';
 import prisma from '@/app/lib/prisma';
+import {
+  PutObjectCommand,
+  PutObjectCommandInput
+} from "@aws-sdk/client-s3";
 import { NextRequest, NextResponse } from 'next/server';
+import { v4 as uuidv4 } from 'uuid';
 
 export async function GET(){
   try {
@@ -12,13 +18,45 @@ export async function GET(){
   }
 }
 
-export async function DELETE(request: NextRequest){
-  try {
-    const { id } = await request.json();
-    await prisma.contact.delete({ where: { id } })
-    return NextResponse.json({ success: 'Contact deleted' }, { status: 200 });
-  } catch(error){
+
+export async function POST(request: NextRequest) {
+  try{
+    const formData =  await request.formData();
+    const name = formData.get('name') as string;
+    const phoneNumber = formData.get('phoneNumber') as string;
+    const email = formData.get('email') as string;
+    const file = formData.get('image') as File | null;
+
+    let imageUrl = null;
+
+    if (file) {
+      const fileName = `${uuidv4()}-${file.name}`;
+      const buffer = Buffer.from(await file.arrayBuffer());
+
+      const uploadParams: PutObjectCommandInput = {
+        Bucket: process.env.S3_BUCKET_NAME!,
+        Key: fileName,
+        Body: buffer,
+        ContentType: file.type,
+      };
+
+      const command = new PutObjectCommand(uploadParams);
+      await s3Client.send(command);
+
+      imageUrl = `https://${process.env.S3_BUCKET_NAME}.s3.${process.env.AWS_REGION}.amazonaws.com/${fileName}`;
+    }
+
+    const response = await prisma.contact.create({
+      data: { name, phoneNumber, email, imageUrl },
+    });
+
+    if (response.id) {
+      return NextResponse.json(response, { status: 201 });
+    }
+
+
+  } catch (error) {
     console.error(error);
-    return NextResponse.json({ error: 'Error deleting contact' }, { status: 500 });
+    return NextResponse.json({ error: 'Error creating contact' }, { status: 500 });
   }
 }
