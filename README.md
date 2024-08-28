@@ -4,6 +4,9 @@ This is a contact management application built with `Next.js`, `Node.js`, `Prism
 
 ![hogwarts-contacts](https://github.com/user-attachments/assets/128c97a8-c771-4a52-a908-1f916450d3d0)
 
+## Live Demo!
+
+The application is deployed to Vercel from the `deployment-with-postgres` branch.
 
 ## Getting Started
 
