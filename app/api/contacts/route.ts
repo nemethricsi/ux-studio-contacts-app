@@ -1,16 +1,13 @@
 import s3Client from '@/app/lib/aws';
 import prisma from '@/app/lib/prisma';
-import {
-  PutObjectCommand,
-  PutObjectCommandInput
-} from "@aws-sdk/client-s3";
+import { PutObjectCommand, PutObjectCommandInput } from '@aws-sdk/client-s3';
 import { NextRequest, NextResponse } from 'next/server';
 import { v4 as uuidv4 } from 'uuid';
 
-export async function GET(){
+export async function GET() {
   try {
     const contacts = await prisma.contact.findMany({
-      orderBy: {createdAt: 'asc'}
+      orderBy: { createdAt: 'asc' },
     });
     return NextResponse.json(contacts, { status: 200 });
   } catch (error) {
@@ -18,10 +15,9 @@ export async function GET(){
   }
 }
 
-
 export async function POST(request: NextRequest) {
-  try{
-    const formData =  await request.formData();
+  try {
+    const formData = await request.formData();
     const name = formData.get('name') as string;
     const phoneNumber = formData.get('phoneNumber') as string;
     const email = formData.get('email') as string;
@@ -53,10 +49,12 @@ export async function POST(request: NextRequest) {
     if (response.id) {
       return NextResponse.json(response, { status: 201 });
     }
-
-
   } catch (error) {
-    console.error(error);
+    if (error instanceof Error && error.message === 'Name field cannot be empty') {
+      return NextResponse.json({ error: error.message }, { status: 400 });
+    }
+
+    console.error('Error creating contact:', error);
     return NextResponse.json({ error: 'Error creating contact' }, { status: 500 });
   }
 }
