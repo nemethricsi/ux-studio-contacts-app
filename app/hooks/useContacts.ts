@@ -53,7 +53,7 @@ export const useContacts = () => {
   const close = useClose();
   const queryClient = useQueryClient();
 
-  const contactsQuery = useQuery({ queryKey: ['contacts'], queryFn: fetchContacts });
+  const contactsQuery = useQuery({ queryKey: ['contacts'], queryFn: fetchContacts, staleTime: 1000 * 60 * 5 });
 
   const createContactMutation = useMutation({
     mutationFn: createContact,
