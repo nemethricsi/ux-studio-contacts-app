@@ -20,6 +20,7 @@ const HeaderActions = () => {
       <SpecialButton
         label="Add new"
         title="Add new contact"
+        iconId="add"
         onClick={() => alert('Add new contact here!')}
       />
     </div>
