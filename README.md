@@ -2,6 +2,9 @@
 
 This is a contact management application built with `Next.js`, `Node.js`, `Prisma`, and `SQLite` database.
 
+![screenshot](https://github.com/user-attachments/assets/4ec38100-a815-4664-b049-a870fb14bf14)
+
+
 ## Getting Started
 
 Follow these steps to get the project up and running locally:
