@@ -24,6 +24,18 @@ const createContact = async (formData: FormData) => {
   }
 };
 
+const updateContact = async ({ id, formData }: { id: string; formData: FormData }): Promise<void> => {
+  const response = await fetch(`/api/contacts/${id}`, {
+    method: 'PATCH',
+    body: formData,
+  });
+
+  if (!response.ok) {
+    const errorData = await response.json();
+    throw new Error(errorData.error || 'Failed to update contact');
+  }
+};
+
 const deleteContact = async (id: string): Promise<void> => {
   const response = await fetch(`/api/contacts/${id}`, {
     method: 'DELETE',
@@ -54,6 +66,17 @@ export const useContacts = () => {
     },
   });
 
+  const updateContactMutation = useMutation({
+    mutationFn: updateContact,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['contacts'] });
+      close();
+    },
+    onError: (error) => {
+      alert(error);
+    },
+  });
+
   const deleteContactMutation = useMutation({
     mutationFn: deleteContact,
     onSuccess: () => {
@@ -61,5 +84,5 @@ export const useContacts = () => {
     },
   });
 
-  return { contactsQuery, createContactMutation, deleteContactMutation };
+  return { contactsQuery, createContactMutation, deleteContactMutation, updateContactMutation };
 };
