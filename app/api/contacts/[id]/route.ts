@@ -72,6 +72,21 @@ export async function PATCH(request: NextRequest, { params }: { params: { id: st
 export async function DELETE(_: NextRequest, { params }: { params: { id: string } }) {
   try {
     const { id } = params;
+
+    const existingContact = await prisma.contact.findUnique({
+      where: { id },
+    });
+    let imageUrl = existingContact?.imageUrl || null;
+
+    if (imageUrl) {
+      const deleteParams: DeleteObjectCommandInput = {
+        Bucket: process.env.S3_BUCKET_NAME!,
+        Key: imageUrl.split('/').pop()!,
+      };
+      const command = new DeleteObjectCommand(deleteParams);
+      await s3Client.send(command);
+    }
+
     await prisma.contact.delete({ where: { id } });
     return NextResponse.json({ success: 'Contact deleted' }, { status: 200 });
   } catch (error) {
