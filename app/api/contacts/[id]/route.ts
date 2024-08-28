@@ -5,9 +5,9 @@ import { DeleteObjectCommand, PutObjectCommand } from '@aws-sdk/client-s3';
 import { NextRequest, NextResponse } from 'next/server';
 import { v4 as uuidv4 } from 'uuid';
 
-export async function PATCH(request: NextRequest, { params }: { params: { id: string } }) {
+export async function PATCH(request: NextRequest, context: { params: { id: string } }) {
   try {
-    const { id } = params;
+    const { id } = context.params;
     const formData = await request.formData();
     const name = formData.get('name') as string;
     const phoneNumber = formData.get('phoneNumber') as string;
@@ -64,14 +64,14 @@ export async function PATCH(request: NextRequest, { params }: { params: { id: st
       return NextResponse.json({ error: error.message }, { status: 400 });
     }
 
-    console.error(error);
+    console.error('Error in PATCH handler:', error);
     return NextResponse.json({ error: 'Error updating contact' }, { status: 500 });
   }
 }
 
-export async function DELETE(_: NextRequest, { params }: { params: { id: string } }) {
+export async function DELETE(request: NextRequest, context: { params: { id: string } }) {
   try {
-    const { id } = params;
+    const { id } = context.params;
 
     const existingContact = await prisma.contact.findUnique({
       where: { id },
@@ -90,7 +90,7 @@ export async function DELETE(_: NextRequest, { params }: { params: { id: string 
     await prisma.contact.delete({ where: { id } });
     return NextResponse.json({ success: 'Contact deleted' }, { status: 200 });
   } catch (error) {
-    console.error(error);
+    console.error('Error in DELETE handler:', error);
     return NextResponse.json({ error: 'Error deleting contact' }, { status: 500 });
   }
 }
