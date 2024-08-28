@@ -5,8 +5,14 @@ import { Input } from '@headlessui/react';
 import Image from 'next/image';
 import { useRef, useState } from 'react';
 
-const ImageUploadField = ({ handleChangeImage }: { handleChangeImage: (file: File | null) => void }) => {
-  const [selectedImageUrl, setSelectedImageUrl] = useState<string | null>(null);
+interface ImageUploadFielProps {
+  handleChangeImage: (file: File | null) => void;
+  existingImageUrl?: string;
+  markImageForDeletion?: () => void;
+}
+
+const ImageUploadField = ({ handleChangeImage, existingImageUrl, markImageForDeletion }: ImageUploadFielProps) => {
+  const [selectedImageUrl, setSelectedImageUrl] = useState<string | null>(existingImageUrl || null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleButtonClick = () => {
@@ -31,6 +37,12 @@ const ImageUploadField = ({ handleChangeImage }: { handleChangeImage: (file: Fil
   const handleRemoveSelection = () => {
     setSelectedImageUrl(null);
     handleChangeImage(null);
+
+    if (existingImageUrl) {
+      if (typeof markImageForDeletion === 'function') {
+        markImageForDeletion();
+      }
+    }
   };
 
   return (
