@@ -1,6 +1,7 @@
 import s3Client from '@/app/lib/aws';
 import prisma from '@/app/lib/prisma';
-import { PutObjectCommand, PutObjectCommandInput } from '@aws-sdk/client-s3';
+import type { PutObjectCommandInput } from '@aws-sdk/client-s3';
+import { PutObjectCommand } from '@aws-sdk/client-s3';
 import { NextRequest, NextResponse } from 'next/server';
 import { v4 as uuidv4 } from 'uuid';
 
