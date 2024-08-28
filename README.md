@@ -4,7 +4,6 @@ This is a contact management application built with `Next.js`, `Node.js`, `Prism
 
 ![solution](https://github.com/user-attachments/assets/ea34538c-4e0e-4c52-8ee4-2d1df44db8da)
 
-
 ## Getting Started
 
 Follow these steps to get the project up and running locally:
@@ -36,7 +35,7 @@ Follow these steps to get the project up and running locally:
 
 3. **Set Up Environment Variables**
 
-   Create a `.env` file in the root of your project and add the following environment variables. Replace DATABASE_URL with the correct path to your SQLite database.
+   Create a `.env` file in the root of your project and add the following environment variables. Replace `DATABASE_URL` with the correct path to your `SQLite` database.
 
    ```bash
    DATABASE_URL="file:.db/contact-app.db"
@@ -82,3 +81,12 @@ You can use `Prisma Studio` to view and interact with the `SQLite` database. See
 ```bash
 npx prisma studio
 ```
+
+## If I had more time...
+
+these are some of the enhancements and features I would prioritize to further improve the application
+
+- Refactor the `<DropdownMenu />` to be more modular and reusable across different parts of the application.
+- Implement functionality to automatically save unsaved form data to `local storage`.
+- Integrate form state management and validation on the client side. Eg. with [`react-hook-form`](https://react-hook-form.com/).
+- Develop unit tests and end-to-end tests (eg. using [`Playwright`](https://playwright.dev/) to ensure the application functions correctly from the user’s perspective.
