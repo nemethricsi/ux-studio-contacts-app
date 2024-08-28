@@ -4,7 +4,7 @@ import { Lexend_Deca } from 'next/font/google';
 import localFont from 'next/font/local';
 import './globals.css';
 
-export const glysa = localFont({
+const glysa = localFont({
   src: './glysa-webfont.woff2',
   display: 'swap',
 });
