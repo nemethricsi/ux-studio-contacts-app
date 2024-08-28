@@ -12,8 +12,8 @@ export const glysa = localFont({
 const lexendDeca = Lexend_Deca({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Contact app flow • UX Studio',
-  description: "Efficiently manage contacts with UX Studio's user-friendly contact listing app.",
+  title: 'Contacts Made Easy • UX Studio',
+  description: "Proof that I'm not just a pretty interface. Hire me, and let's create more amazing stuff together!",
 };
 
 export default function RootLayout({
