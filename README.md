@@ -1,8 +1,9 @@
-# Contacts App • UX Studio
+# Contact App • UX Studio
 
 This is a contact management application built with `Next.js`, `Node.js`, `Prisma`, and `SQLite` database.
 
-![solution](https://github.com/user-attachments/assets/ea34538c-4e0e-4c52-8ee4-2d1df44db8da)
+![hogwarts-contacts](https://github.com/user-attachments/assets/128c97a8-c771-4a52-a908-1f916450d3d0)
+
 
 ## Getting Started
 
