@@ -14,7 +14,7 @@ interface DropdownMenuItem {
   onClick: () => void;
 }
 
-const DropdownMenu = ({ contactId }: { contactId: string }) => {
+const DropdownMenu = ({ contactId, openEditModal }: { contactId: string; openEditModal: () => void }) => {
   const { deleteContactMutation } = useContacts();
 
   const handleDelete = () => {
@@ -25,7 +25,7 @@ const DropdownMenu = ({ contactId }: { contactId: string }) => {
     {
       id: 1,
       label: 'Edit',
-      onClick: () => alert('TODO: Edit'),
+      onClick: openEditModal,
       iconId: 'settings',
     },
     {
