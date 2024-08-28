@@ -1,9 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   webpack(config) {
-    const fileLoaderRule = config.module.rules.find((rule) =>
-      rule.test?.test?.('.svg'),
-    );
+    const fileLoaderRule = config.module.rules.find((rule) => rule.test?.test?.('.svg'));
 
     if (fileLoaderRule) {
       const resourceQueryNot = fileLoaderRule.resourceQuery?.not || [];
