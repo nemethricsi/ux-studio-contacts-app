@@ -5,11 +5,7 @@ import { Input } from '@headlessui/react';
 import Image from 'next/image';
 import { useRef, useState } from 'react';
 
-const ImageUploadField = ({
-  handleChangeImage,
-}: {
-  handleChangeImage: (file: File | null) => void;
-}) => {
+const ImageUploadField = ({ handleChangeImage }: { handleChangeImage: (file: File | null) => void }) => {
   const [selectedImageUrl, setSelectedImageUrl] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -19,9 +15,7 @@ const ImageUploadField = ({
     }
   };
 
-  const handleFileChange: React.ChangeEventHandler<HTMLInputElement> = (
-    event,
-  ) => {
+  const handleFileChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
     const file = event.target.files?.[0];
     if (file && file.type.startsWith('image/')) {
       handleChangeImage(file);
@@ -51,13 +45,7 @@ const ImageUploadField = ({
         />
       </div>
       <div className="flex gap-2">
-        <Input
-          ref={fileInputRef}
-          type="file"
-          accept="image/*"
-          className="hidden"
-          onChange={handleFileChange}
-        />
+        <Input ref={fileInputRef} type="file" accept="image/*" className="hidden" onChange={handleFileChange} />
         <Button
           variant="primary"
           label={`${selectedImageUrl ? 'Change' : 'Add'} picture`}
@@ -65,13 +53,7 @@ const ImageUploadField = ({
           onClick={handleButtonClick}
         />
         {selectedImageUrl && (
-          <Button
-            variant="primary"
-            label="Delete picture"
-            iconId="delete"
-            iconOnly
-            onClick={handleRemoveSelection}
-          />
+          <Button variant="primary" label="Delete picture" iconId="delete" iconOnly onClick={handleRemoveSelection} />
         )}
       </div>
     </div>

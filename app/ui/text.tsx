@@ -27,11 +27,7 @@ const variantToComponent: Record<TextVariant, keyof JSX.IntrinsicElements> = {
 const Text = ({ variant, children, className }: TextProps) => {
   const Component = variantToComponent[variant];
 
-  return (
-    <Component className={clsx(styles[variant], className)}>
-      {children}
-    </Component>
-  );
+  return <Component className={clsx(styles[variant], className)}>{children}</Component>;
 };
 
 export default Text;

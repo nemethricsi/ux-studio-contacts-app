@@ -11,10 +11,7 @@ const InputField = ({ label, ...props }: InputFieldProps) => {
 
   return (
     <Field className="flex flex-col gap-1">
-      <Label
-        htmlFor={id}
-        className="text-secondary text-xs font-normal leading-3 tracking-[0.01em]"
-      >
+      <Label htmlFor={id} className="text-secondary text-xs font-normal leading-3 tracking-[0.01em]">
         {label}
       </Label>
       <Input

@@ -16,12 +16,7 @@ const MainHeader = ({ openCreateModal }: { openCreateModal: () => void }) => {
         </div>
       </div>
       <div className="hidden flex-grow items-center justify-start border-b border-grey-60 px-6 py-7 md:flex">
-        <Button
-          variant="secondary"
-          label="Light mode"
-          iconOnly
-          iconId="light-mode"
-        />
+        <Button variant="secondary" label="Light mode" iconOnly iconId="light-mode" />
       </div>
     </header>
   );

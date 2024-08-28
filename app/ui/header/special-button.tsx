@@ -9,18 +9,9 @@ interface SpecialButtonProps extends ButtonProps {
   iconId: IconType;
 }
 
-const SpecialButton = ({
-  label,
-  title,
-  iconId,
-  ...props
-}: SpecialButtonProps) => {
+const SpecialButton = ({ label, title, iconId, ...props }: SpecialButtonProps) => {
   return (
-    <Button
-      className="interactive flex-shrink-0 rounded-full bg-grey-100"
-      title={title}
-      {...props}
-    >
+    <Button className="interactive flex-shrink-0 rounded-full bg-grey-100" title={title} {...props}>
       <div className="rounded-full bg-gradient-to-b from-grey-20 to-transparent p-px">
         <div className="rounded-full bg-gradient-to-b from-grey-60/[.7] to-grey-60">
           <div className="flex items-center gap-2 rounded-full py-2 pl-3 pr-4 hover:bg-white/[.04] active:bg-white/[.04]">

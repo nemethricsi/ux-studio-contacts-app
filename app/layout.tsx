@@ -13,8 +13,7 @@ const lexendDeca = Lexend_Deca({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Contact app flow • UX Studio',
-  description:
-    "Efficiently manage contacts with UX Studio's user-friendly contact listing app.",
+  description: "Efficiently manage contacts with UX Studio's user-friendly contact listing app.",
 };
 
 export default function RootLayout({
@@ -24,9 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full">
-      <body
-        className={`${lexendDeca.className} flex h-full flex-col bg-grey-100 text-white antialiased`}
-      >
+      <body className={`${lexendDeca.className} flex h-full flex-col bg-grey-100 text-white antialiased`}>
         <Providers>{children}</Providers>
       </body>
     </html>

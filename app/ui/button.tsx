@@ -14,14 +14,10 @@ interface BaseButtonProps extends ButtonPrimitiveProps {
   iconOnly?: boolean;
 }
 
-type ButtonProps = BaseButtonProps &
-  React.ButtonHTMLAttributes<HTMLButtonElement>;
+type ButtonProps = BaseButtonProps & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  (
-    { label, className = '', variant, iconId, iconOnly = false, ...props },
-    ref,
-  ) => {
+  ({ label, className = '', variant, iconId, iconOnly = false, ...props }, ref) => {
     const variantClasses = clsx({
       'primary-button': variant === 'primary',
       'secondary-button': variant === 'secondary',
@@ -33,12 +29,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       'px-4 py-2': !iconId,
     });
 
-    const combinedClasses = clsx(
-      'button-base',
-      variantClasses,
-      typeClasses,
-      className,
-    );
+    const combinedClasses = clsx('button-base', variantClasses, typeClasses, className);
 
     return (
       <ButtonPrimitive className={combinedClasses} ref={ref} {...props}>

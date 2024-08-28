@@ -8,12 +8,7 @@ const MobileHeader = () => {
         <BackButton />
       </div>
       <div className="flex flex-grow items-center justify-end p-6">
-        <Button
-          variant="secondary"
-          label="Light mode"
-          iconOnly
-          iconId="light-mode"
-        />
+        <Button variant="secondary" label="Light mode" iconOnly iconId="light-mode" />
       </div>
     </div>
   );

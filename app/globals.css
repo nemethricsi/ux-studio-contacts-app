@@ -4,31 +4,31 @@
 
 @layer utilities {
   .text-secondary {
-    @apply text-opacity-56 text-white;
+    @apply text-white text-opacity-56;
   }
   .text-disabled {
-    @apply text-opacity-32 text-white;
+    @apply text-white text-opacity-32;
   }
 
   .interactive {
-    @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500
+    @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500;
   }
 
   .padding-icon-only-button {
-    @apply p-2
+    @apply p-2;
   }
 }
 
 @layer components {
   .button-base {
-    @apply interactive h-10 rounded-lg transition duration-150
+    @apply interactive h-10 rounded-lg transition duration-150;
   }
-  
+
   .primary-button {
-    @apply bg-grey-60 hover:bg-grey-50 active:bg-grey-40
+    @apply bg-grey-60 hover:bg-grey-50 active:bg-grey-40;
   }
 
   .secondary-button {
-    @apply bg-transparent hover:bg-grey-90 active:bg-grey-80
+    @apply bg-transparent hover:bg-grey-90 active:bg-grey-80;
   }
 }

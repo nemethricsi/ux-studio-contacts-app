@@ -34,7 +34,6 @@ const CreateForm = () => {
       }
 
       createContactMutation.mutate(formData);
-      close();
     } catch (error) {
       console.log(error);
     }
@@ -45,26 +44,9 @@ const CreateForm = () => {
       <form className="flex flex-col gap-6 bg-grey-100">
         <Text variant="h2">Add Contact</Text>
         <ImageUploadField handleChangeImage={handleChangeImage} />
-        <InputField
-          label="Name"
-          id="name"
-          required
-          value={name}
-          onChange={setName}
-        />
-        <InputField
-          label="Phone number"
-          id="phoneNumber"
-          value={phoneNumber}
-          onChange={setPhoneNumber}
-        />
-        <InputField
-          label="Email Address"
-          id="emailAddress"
-          type="email"
-          value={email}
-          onChange={setEmail}
-        />
+        <InputField label="Name" id="name" value={name} autoFocus onChange={setName} />
+        <InputField label="Phone number" id="phoneNumber" value={phoneNumber} onChange={setPhoneNumber} />
+        <InputField label="Email Address" id="emailAddress" type="email" value={email} onChange={setEmail} />
       </form>
       <div className="flex items-center justify-end gap-2 pt-12">
         <Button variant="secondary" label="Cancel" onClick={close} />

@@ -6,11 +6,7 @@ import type { Contact } from '@prisma/client';
 import Image from 'next/image';
 import { useState } from 'react';
 
-const ContactListItem = ({
-  contact: { id, name, imageUrl, phoneNumber },
-}: {
-  contact: Contact;
-}) => {
+const ContactListItem = ({ contact: { id, name, imageUrl, phoneNumber } }: { contact: Contact }) => {
   const [hoveredRow, setHoveredRow] = useState<string | null>(null);
 
   return (
