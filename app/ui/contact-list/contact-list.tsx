@@ -8,7 +8,7 @@ import ContactListSkeleton from './contact-list-skeleton';
 
 const ContactList = () => {
   const {
-    contactsQuery: { data: contacts, isError, isLoading },
+    contactsQuery: { data: contacts, isLoading },
   } = useContacts();
 
   return (
@@ -18,7 +18,7 @@ const ContactList = () => {
         <div className="mt-4 flex flex-col items-center gap-5">
           <Image src="/images/add-contact.svg" alt="empty state illustration" width={200} height={200} />
           <Text variant="h3" className="text-secondary text-center">
-            No contacts yet. Click "Add new" above to get started!
+            No contacts yet. Click &quot;Add new&quot; above to get started!
           </Text>
         </div>
       )}
