@@ -59,9 +59,22 @@ const EditForm = ({ contact }: { contact: Contact }) => {
           existingImageUrl={contact.imageUrl || ''}
           markImageForDeletion={markImageForDeletion}
         />
-        <InputField label="Name" id="name" value={name} onChange={setName} />
-        <InputField label="Phone number" id="phoneNumber" value={phoneNumber} onChange={setPhoneNumber} />
-        <InputField label="Email Address" id="emailAddress" type="email" value={email} onChange={setEmail} />
+        <InputField label="Name" id="name" placeholder="Jamie Wright" value={name} onChange={setName} />
+        <InputField
+          label="Phone number"
+          id="phoneNumber"
+          placeholder="+01 234 5678"
+          value={phoneNumber}
+          onChange={setPhoneNumber}
+        />
+        <InputField
+          label="Email Address"
+          id="emailAddress"
+          type="email"
+          placeholder="jamie.wright@mail.com"
+          value={email}
+          onChange={setEmail}
+        />
       </form>
       <div className="flex items-center justify-end gap-2 pt-12">
         <Button variant="secondary" label="Cancel" onClick={close} />
