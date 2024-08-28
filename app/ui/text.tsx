@@ -13,7 +13,7 @@ const styles: Record<TextVariant, string> = {
   h2: 'font-serif text-2xl leading-10 tracking-normal',
   h3: 'text-base font-normal tracking-[0.01em]',
   body: 'text-sm font-normal tracking-[0.01em]',
-  message: 'text-xs leading-3 font-normal tracking-[0.01em]',
+  message: 'text-xs font-normal tracking-[0.01em]',
 };
 
 const variantToComponent: Record<TextVariant, keyof JSX.IntrinsicElements> = {
