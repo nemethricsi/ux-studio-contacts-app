@@ -1,13 +1,31 @@
 # Contact App • UX Studio
 
-This is a contact management application built with `Next.js`, `Node.js`, `Prisma`, and `SQLite` database.
+This is a contact management application built with:
+
+- `Next.js`,
+- `Node.js`,
+- `Prisma`,
+- `SQLite` database (and `PostgresQL`)
+- `react-query`
+- `AWS S3` storage
+- `framer-motion`
+- Typescript
+- Tailwind CSS
 
 ![hogwarts-contacts](https://github.com/user-attachments/assets/128c97a8-c771-4a52-a908-1f916450d3d0)
 
+## Live Demo!
 
-## Getting Started
+The application was deployed with a `@vercel/postgres` database on Vercel from the branch [`deployment-with-postgres`](https://github.com/nemethricsi/ux-studio-contacts-app/tree/deployment-with-postgres).
 
-Follow these steps to get the project up and running locally:
+✨
+Go: [Contact App • UX Studio](https://ux-studio-contact.vercel.app)
+
+---
+
+## Local development
+
+Follow these steps to get the project up and running locally (with `sqlite`):
 
 ### Prerequisites
 
@@ -36,7 +54,7 @@ Follow these steps to get the project up and running locally:
 
 3. **Set Up Environment Variables**
 
-   Create a `.env` file in the root of your project and add the following environment variables. Replace `DATABASE_URL` with the correct path to your `SQLite` database.
+   Create a `.env` file in the root of your project and add the following environment variables.
 
    ```bash
    DATABASE_URL="file:.db/contact-app.db"
@@ -71,9 +89,8 @@ Follow these steps to get the project up and running locally:
    npm run dev
    ```
 
-✨✨
+✨
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-✨✨
 
 ---
 
@@ -91,3 +108,4 @@ these are some of the enhancements and features I would prioritize to further im
 - Implement functionality to automatically save unsaved form data to `local storage`.
 - Integrate form state management and validation on the client side. Eg. with [`react-hook-form`](https://react-hook-form.com/).
 - Develop unit tests and end-to-end tests (eg. using [`Playwright`](https://playwright.dev/) to ensure the application functions correctly from the user’s perspective.
+- Fix issues in Safari
