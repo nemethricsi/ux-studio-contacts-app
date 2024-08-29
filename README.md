@@ -56,9 +56,6 @@ Follow these steps to get the project up and running locally (with `sqlite`):
 
    Create a `.env` file in the root of your project and add the following environment variables.
 
-   > [!WARNING]  
-   > The values were sent to Bianka by email.
-
    ```bash
    DATABASE_URL="file:.db/contact-app.db"
 
@@ -67,6 +64,9 @@ Follow these steps to get the project up and running locally (with `sqlite`):
    AWS_REGION=
    S3_BUCKET_NAME=
    ```
+
+> [!WARNING]  
+> The values were sent to Bianka by email.
 
 4. **Generate Prisma Client**
 
