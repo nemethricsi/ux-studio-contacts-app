@@ -1,13 +1,9 @@
-import type { IconType } from '@/app/ui/icon';
+import type { IconType } from '@/app/ui/(icons)/icon';
+import Icon from '@/app/ui/(icons)/icon';
 import type { ButtonProps as ButtonPrimitiveProps } from '@headlessui/react';
 import { Button as ButtonPrimitive } from '@headlessui/react';
 import clsx from 'clsx';
-import dynamic from 'next/dynamic';
 import * as React from 'react';
-
-const Icon = dynamic(() => import('@/app/ui/icon'), {
-  ssr: false,
-});
 
 type ButtonVariant = 'primary' | 'secondary';
 

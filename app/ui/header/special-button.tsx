@@ -1,11 +1,7 @@
-import type { IconType } from '@/app/ui/icon';
+import type { IconType } from '@/app/ui/(icons)/icon';
+import Icon from '@/app/ui/(icons)/icon';
 import Text from '@/app/ui/text';
 import { Button, ButtonProps } from '@headlessui/react';
-import dynamic from 'next/dynamic';
-
-const Icon = dynamic(() => import('@/app/ui/icon'), {
-  ssr: false,
-});
 
 interface SpecialButtonProps extends ButtonProps {
   label: string;
