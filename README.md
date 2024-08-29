@@ -2,17 +2,18 @@
 
 ![hogwarts-contacts](https://github.com/user-attachments/assets/128c97a8-c771-4a52-a908-1f916450d3d0)
 
-This is a contact management application built with:
+**Tech stack:**
 
-- `Next.js`,
-- `Node.js`,
-- `Prisma`,
-- `SQLite` database (and `PostgresQL`)
-- `react-query`
-- `AWS S3` storage
-- `framer-motion`
-- Typescript
-- Tailwind CSS
+- Frontend with `Next.js`,
+- Backend with `Node.js`,
+- ORM with `Prisma`,
+- Database with `SQLite` (and `PostgresQL`)
+- Data fetching and caching with `react-query`
+- Object storage with `AWS S3`
+- Animations with `framer-motion`
+- Accessible headless components with `@headlessui/react`
+- Type safety with `Typescript`
+- Styles with `Tailwind CSS`
 
 ## Live Demo!
 
@@ -23,9 +24,9 @@ Go: [Contact App • UX Studio](https://ux-studio-contact.vercel.app)
 
 ---
 
-## Local development
+## Local development guide
 
-Follow these steps to get the project up and running locally (with `sqlite`):
+Follow these steps to get the project up and running locally (with `SQLite`):
 
 ### Prerequisites
 
