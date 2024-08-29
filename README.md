@@ -1,5 +1,7 @@
 # Contact App • UX Studio
 
+![hogwarts-contacts](https://github.com/user-attachments/assets/128c97a8-c771-4a52-a908-1f916450d3d0)
+
 This is a contact management application built with:
 
 - `Next.js`,
@@ -11,8 +13,6 @@ This is a contact management application built with:
 - `framer-motion`
 - Typescript
 - Tailwind CSS
-
-![hogwarts-contacts](https://github.com/user-attachments/assets/128c97a8-c771-4a52-a908-1f916450d3d0)
 
 ## Live Demo!
 
@@ -55,6 +55,9 @@ Follow these steps to get the project up and running locally (with `sqlite`):
 3. **Set Up Environment Variables**
 
    Create a `.env` file in the root of your project and add the following environment variables.
+
+   > [!WARNING]  
+   > The values were sent to Bianka by email.
 
    ```bash
    DATABASE_URL="file:.db/contact-app.db"
