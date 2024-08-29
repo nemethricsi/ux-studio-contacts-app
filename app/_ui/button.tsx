@@ -1,5 +1,5 @@
-import type { IconType } from '@/app/ui/(icons)/icon';
-import Icon from '@/app/ui/(icons)/icon';
+import type { IconType } from '@/app/_ui/icon';
+import Icon from '@/app/_ui/icon';
 import type { ButtonProps as ButtonPrimitiveProps } from '@headlessui/react';
 import { Button as ButtonPrimitive } from '@headlessui/react';
 import clsx from 'clsx';

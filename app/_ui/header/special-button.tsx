@@ -1,6 +1,6 @@
-import type { IconType } from '@/app/ui/(icons)/icon';
-import Icon from '@/app/ui/(icons)/icon';
-import Text from '@/app/ui/text';
+import type { IconType } from '@/app/_ui/icon';
+import Icon from '@/app/_ui/icon';
+import Text from '@/app/_ui/text';
 import { Button, ButtonProps } from '@headlessui/react';
 
 interface SpecialButtonProps extends ButtonProps {

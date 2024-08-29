@@ -1,7 +1,7 @@
-import Button from '@/app/ui/button';
-import BackButton from '@/app/ui/header/back-button';
-import HeaderActions from '@/app/ui/header/header-actions';
-import Text from '@/app/ui/text';
+import Button from '@/app/_ui/button';
+import BackButton from '@/app/_ui/header/back-button';
+import HeaderActions from '@/app/_ui/header/header-actions';
+import Text from '@/app/_ui/text';
 
 const MainHeader = ({ openCreateModal }: { openCreateModal: () => void }) => {
   return (

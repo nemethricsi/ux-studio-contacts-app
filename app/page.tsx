@@ -1,10 +1,10 @@
 'use client';
 
-import ContactList from '@/app/ui/contact-list/contact-list';
-import CreateForm from '@/app/ui/form/create-form';
-import MainHeader from '@/app/ui/header/main-header';
-import MobileHeader from '@/app/ui/header/mobile-header';
-import Modal from '@/app/ui/modal';
+import ContactList from '@/app/_ui/contact-list/contact-list';
+import CreateForm from '@/app/_ui/form/create-form';
+import MainHeader from '@/app/_ui/header/main-header';
+import MobileHeader from '@/app/_ui/header/mobile-header';
+import Modal from '@/app/_ui/modal';
 import { useState } from 'react';
 
 export default function Home() {

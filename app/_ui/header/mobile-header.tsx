@@ -1,5 +1,5 @@
-import Button from '@/app/ui/button';
-import BackButton from '@/app/ui/header/back-button';
+import Button from '@/app/_ui/button';
+import BackButton from '@/app/_ui/header/back-button';
 
 const MobileHeader = () => {
   return (

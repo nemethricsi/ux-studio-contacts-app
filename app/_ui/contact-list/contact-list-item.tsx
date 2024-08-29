@@ -1,9 +1,9 @@
 'use client';
 
-import ContactListItemActions from '@/app/ui/contact-list/contact-list-item-actions';
-import EditForm from '@/app/ui/form/edit-form';
-import Modal from '@/app/ui/modal';
-import Text from '@/app/ui/text';
+import ContactListItemActions from '@/app/_ui/contact-list/contact-list-item-actions';
+import EditForm from '@/app/_ui/form/edit-form';
+import Modal from '@/app/_ui/modal';
+import Text from '@/app/_ui/text';
 import type { Contact } from '@prisma/client';
 import Image from 'next/image';
 import { useState } from 'react';

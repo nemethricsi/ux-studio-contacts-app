@@ -1,9 +1,9 @@
 'use client';
 
+import type { IconType } from '@/app/_ui/icon';
+import Icon from '@/app/_ui/icon';
+import Text from '@/app/_ui/text';
 import { useContacts } from '@/app/hooks/useContacts';
-import type { IconType } from '@/app/ui/(icons)/icon';
-import Icon from '@/app/ui/(icons)/icon';
-import Text from '@/app/ui/text';
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
 import { motion } from 'framer-motion';
 

@@ -1,7 +1,7 @@
 'use client';
 
+import Text from '@/app/_ui/text';
 import { useContacts } from '@/app/hooks/useContacts';
-import Text from '@/app/ui/text';
 import Image from 'next/image';
 import ContactListItem from './contact-list-item';
 import ContactListSkeleton from './contact-list-skeleton';

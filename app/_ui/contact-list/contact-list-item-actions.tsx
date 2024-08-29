@@ -1,5 +1,5 @@
-import Button from '@/app/ui/button';
-import DropdownMenu from '@/app/ui/dropdown-menu';
+import Button from '@/app/_ui/button';
+import DropdownMenu from '@/app/_ui/dropdown-menu';
 
 const ContactListItemActions = ({ contactId, openEditModal }: { contactId: string; openEditModal: () => void }) => {
   return (

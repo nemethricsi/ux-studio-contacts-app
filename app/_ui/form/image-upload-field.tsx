@@ -1,6 +1,6 @@
 'use client';
 
-import Button from '@/app/ui/button';
+import Button from '@/app/_ui/button';
 import { Input } from '@headlessui/react';
 import Image from 'next/image';
 import { useRef, useState } from 'react';
