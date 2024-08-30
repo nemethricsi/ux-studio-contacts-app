@@ -1,15 +1,7 @@
+import { lexendDeca } from '@/app/fonts';
 import Providers from '@/app/lib/providers';
 import type { Metadata } from 'next';
-import { Lexend_Deca } from 'next/font/google';
-import localFont from 'next/font/local';
 import './globals.css';
-
-const glysa = localFont({
-  src: './glysa-webfont.woff2',
-  display: 'swap',
-});
-
-const lexendDeca = Lexend_Deca({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Contacts Made Easy • UX Studio',

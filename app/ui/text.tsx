@@ -1,3 +1,4 @@
+import { glysa } from '@/app/fonts';
 import clsx from 'clsx';
 
 type TextVariant = 'h1' | 'h2' | 'h3' | 'body' | 'message';
@@ -9,8 +10,8 @@ interface TextProps {
 }
 
 const styles: Record<TextVariant, string> = {
-  h1: 'font-serif text-[32px] leading-[48px] tracking-normal',
-  h2: 'font-serif text-2xl leading-10 tracking-normal',
+  h1: `${glysa.className} text-[32px] leading-[48px] tracking-normal `,
+  h2: `${glysa.className} text-2xl leading-10 tracking-normal`,
   h3: 'text-base font-normal tracking-[0.01em]',
   body: 'text-sm font-normal tracking-[0.01em]',
   message: 'text-xs font-normal tracking-[0.01em]',
