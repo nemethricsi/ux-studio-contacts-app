@@ -6,7 +6,7 @@ import Modal from '@/app/ui/modal';
 import Text from '@/app/ui/text';
 import type { Contact } from '@prisma/client';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const ContactListItem = ({ contact }: { contact: Contact }) => {
   const { id, name, imageUrl, phoneNumber } = contact;
@@ -20,6 +20,12 @@ const ContactListItem = ({ contact }: { contact: Contact }) => {
   const closeEditModal = () => {
     setisOpen(false);
   };
+
+  useEffect(() => {
+    if (isOpen) {
+      setHoveredRow(null);
+    }
+  }, [isOpen]);
 
   return (
     <>
